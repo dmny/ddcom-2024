@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Begin Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+/* End Reset*/
+
+:root {
+ 
+  /* --clr-Primary-100: #090e23;  */
+  --clr-Primary-100: #02040f; 
+  --clr-Primary-200: 	hsl(231, 15%, 18%);
+  /* --clr-Primary-200: 	#333; */
+ 
+  --clr-primary-400: #F2E0C9;
+
+  --clr-accent-500: hsl(12, 60%, 45%);
+  --clr-accent-400:#5B7338;
+  --clr-accent-300: hsl(12, 88%, 75%);
+  --clr-accent-100: hsl(13, 100%, 96%);
+
+  --clr-neutral-900: hsl(233, 12%, 13%);
+  --clr-neutral-100: hsl(0, 0%, 98%);
+
+
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-600: 1rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3.5rem;
+
+  --fs-body: var(--fs-400);
+  --fs-primary-heading: var(--fs-800);
+  --fs-secondary-heading: var(--fs-700);
+  --fs-nav: var(--fs-500);
+  --fs-button: var(--fs-300);
+
+  --size-100: .25rem;
+  --size-200: .5rem;
+  --size-300: .75rem;
+  --size-400: 1rem;
+  --size-500: 1.5rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+}
+
+@media (min-width: 50em) {
+  :root {
+    --fs-body: var(--fs-500);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-800);
+    --fs-nav: var(--fs-300);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-primary);
+  color: #b3b38f;
+  background: var(--clr-Primary-100);
+  
+  /* padding-top: 10rem; */
+}
+a {
+  color: rgb(3, 196, 154);
+  text-decoration: none;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+img {
+  max-width: 100%;
+}
+/* nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+nav h1 {
+  margin-right: auto;
+} */
+
+h1 {
+  margin:0;
+  padding:0;
+  font-weight: 500;
+}
+.content {
+  position: relative;
+  padding: 0;
+  max-width: 60%;
+  margin: 15rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: #333; */
+}
+
+@media(max-width: 50em) {
+  .content {
+  flex-direction: column;
+  max-width: 100%;
+  background: #f30;
+  }
+
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.offers, .products {
+  display: flex;
+  gap: 20px;
+}
+
+/* navigation */
+.header {
+  padding: 4rem 0;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  
+  background-color: transparent;
+  user-select: none; /* Standard syntax */
+}
+
+.nav-wrapper {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.nav-list {
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: 0.2rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: clamp(var(--size-400), 5vw, var(--size-700));
+  /* font-weight: var(--fw-semi-bold); */
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--clr-primary-400);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  text-decoration: none;
+  color: var(--clr-accent -400);
+}
+
+@media (max-width: 50em) {
+  .primary-navigation {
+    display: none;
+    position: fixed;
+    padding: var(--size-700);
+    inset: 7rem var(--size-400) auto;
+    max-width: 25rem;
+    margin-left: auto;
+    background: var(--clr-neutral-100);
+    border-radius: var(--size-100);
+    box-shadow: 0 0 0.75em rgb(0,0,0, 0.25);
+  }
+
+  .primary-header[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+  }
+
+  .nav-list {
+    display: grid;
+    gap: var(--size-600);
+    text-align: center;
+    font-weight: var(--fw-bold);
+  }
+
+  .primary-navigation[data-visible] {
+    display: block;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+    top: var(--size-600);
+    right: var(--size-400);
+    z-index: 100;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0.5em;
+  }
+  
+  .mobile-nav-toggle .icon-close {
+    display: none;
+  }
+}
+
+.logo a {
+  font-size: 2rem;
+  max-width: 20ch;
+  line-height: 1;
+  font-weight: 100;
+  position: relative;
+  text-decoration: none;
+  letter-spacing: .2rem;
+}
+
+
+/* Skills Page */
+.graphs {
+  position: relative;
+  /* overflow: hidden; */
+  /* overflow: clip;
+  overflow-clip-margin: 0 0 0 1em; */
+  margin: 0;
+  padding: 0;
+  height: 80vh;
+  width: 50%;
+  /* background: var(--clr-Primary-200); */
+}
+
+.graph {
+  position: relative;
+  margin: 0 0 5rem;
+  padding: 0;
+  height: fit-content;
+  width: 100%;
+  height: auto;
+
+  /* background: lightblue; */
+
+}
+
+iframe {
+  margin: 0;
+  border: 0;
+}
+
+.graph::before {
+  content: 'Beginner';
+  /* rotate: -90deg; */
+  transform-origin: bottom right;
+  position: absolute;
+  left: 0;
+  top: 103%;
+  letter-spacing: .15em;
+  color: rgba(255,255,255,0.25);
+}
+
+.graph::after {
+  content: 'Expert';
+  /* rotate: -90deg; */;
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  letter-spacing: .15em;
+  color: rgba(255,255,255,0.25);
+}
+
+.graph h1 {
+  margin: 0 0 1.5rem;
+}
+
+.skill-bars {
+  overflow: hidden;
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0 0 1rem;;
+  list-style: none;
+  border-right: 1px solid rgb(71, 68, 95);
+  background-image:  linear-gradient(90deg, rgba(255, 255, 255, .15) 1px, transparent .1em);
+  background-size: 20%;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background-color: rgb(71, 68, 95);
+
+  gap: .5rem;
+  transform-origin: center left;
+}
+
+.bar svg {
+height: 20px;
+}
+
+.barCopy {
+  transform-origin: center left;
+}
+
+.github-link svg {
+  height: 40px;
+  filter: invert(1);
+}
+
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 10deg;
+}
+
+.box {
+  --a:10deg; /*  needed for firefox to have a valid output */
+  cursor:pointer;
+  width:250px;
+  height:200px;
+  margin:15px;
+  display:inline-block;
+  transition:--a 0.5s;
+  background:linear-gradient(var(--a),red ,blue);
+}
+.box:hover {
+  --a:180deg;
+}
+
+.piecharts {
+  padding: 0;
+  height: 80vh;
+  width: 50%;
+  padding: 0 5rem 0 0;
+  /* background-color: lightblue; */
+}
+
+.piechart1 {
+  margin: 0 0 3rem;
+  width: 65%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: lightblue;
+  background: conic-gradient( 
+     lightblue 25deg, darkblue 25deg 270deg, blue 18deg 45deg);
+}
+
+/* About Page */
+.about {
+  padding: 0 5rem 0 0;
+  height: 80vh;
+  width: 100%;
+  /* background-color: lightblue; */
+}
+
+.about-photo {
+  margin: 0 0 3rem;
+  height: 300px;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: rgb(71, 68, 95);
+  border: 5px solid black;
+}
+
+.otter {
+  filter: grayscale(100%);
+  mix-blend-mode: screen;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Home Page */
+.heroContainer {
+  padding: 0;
+  margin:0;
+  overflow: hidden;
+
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "stack";
+}
+
+.heroCopy {
+  width: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+
+.heroLeftSVG {
+  position: absolute;
+  left: 0;
+  margin:0;
+  padding:0;
+  width: 100%;
+  height: 100vh;
+}
+
+.heroRightSVG {
+  position: absolute;
+  right: 0;
+  margin:0;
+  padding:0;
+  width: 100%;
+  height: 100vh;
+  
+}
+
+.heroRightSVG svg {
+  position: absolute;
+  right: 0;
+  margin:0;
+  padding:0;
+  height: 100vh;
+}
+ 
+.heroLeftSVG svg {
+  position: absolute;
+  left: 0;
+  margin:0;
+  padding:0;
+  height: 100vh;
+}
+
+
+.heroContainer > * {
+  grid-area: stack;
+}
+
+
+
+.hero_title {
+  font-size:3rem;
+  /* font-size: 6rem; */
+
+  line-height: 1;
+  /* font-style: italic; */
+  font-weight: 100;
+  position: relative;
+  
+    > span {
+      font-style: normal;
+      font-size: 6rem;
+      display: block;
+    }
+  }
+
+  

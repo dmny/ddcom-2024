@@ -1,0 +1,23 @@
+.btn {
+  border: 0;
+  align-items: center;
+  background-color:  #cc8556;
+  border-radius: .25rem;
+  color: #fff;
+  padding: 1rem;
+  font-weight: 600;
+  margin: 0;
+  text-decoration: none;
+  user-select: none;
+  width: auto;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #fb8332;
+
+}
+
+.btn:active {
+  background-color: #c85000;
+}

@@ -1,0 +1,121 @@
+.about {
+    margin: 0;
+    padding: 0 5rem 0 0;
+    width: 60%;
+    // padding: 0 5rem 0 0;
+    // background-color: lightblue;
+}
+
+.about h2 {
+    margin: 0 0 2rem;
+}
+
+.skill-charts {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    height: 100%;
+    gap: 3rem;
+    justify-content: space-between;
+}
+  
+.skill-chart {
+    position: relative;
+    width: 100%;
+}
+
+.skill-chart h2 {
+    margin: 0 0 2rem;
+}
+
+.chart-footer {
+    margin: 0.5rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.25;
+}
+  
+.skill-bars {
+    overflow: hidden;
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0 0 1rem;
+    list-style: none;
+    border-right: 1px solid rgb(71, 68, 95);
+    background-image:  linear-gradient(90deg, rgba(255, 255, 255, .15) 1px, transparent .1em);
+    background-size: 20%;
+    // background-color: #f30;
+}
+
+.barUnit {
+    width: 100%;
+    margin: 0;
+    // background: green;
+}
+  
+.bar {
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background-color: rgb(50, 55, 69);
+    // gap: .5rem;
+    transform-origin: center left;
+}
+  
+.bar svg {
+    height: 20px;
+}
+  
+.barCopy {
+    transform-origin: center left;
+}
+  
+.github-link svg {
+    height: 40px;
+    filter: invert(1);
+}
+
+@media(max-width: 50em) {
+    .about {
+        margin: 10em 0 0 0;
+        padding: 0 1.5rem;
+        width: 100%;
+        height: auto;
+
+    }
+    .skill-charts {
+        position: relative;
+        margin: 4rem 0 0 0;
+        padding: 0 1.5rem;
+        width: 100%;
+    }
+    .skill-chart {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .chart-footer {
+        margin: 0.5rem 0 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0.25;
+    }
+      
+}
+  
+.piechart1 {
+    margin: 0 0 3rem;
+    width: 65%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: lightblue;
+    background: conic-gradient( 
+       lightblue 25deg, darkblue 25deg 270deg, blue 18deg 45deg);
+}

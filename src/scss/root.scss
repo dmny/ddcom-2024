@@ -1,0 +1,18 @@
+:root {
+    --fc-primary: #fff;
+
+    --clr-Primary-100: #02040f; 
+    --clr-Primary-200: 	hsl(231, 15%, 18%);
+
+  
+    --clr-accent-100: rgb(50, 55, 69);
+
+    --ff-primary: 'Verdana', sans-serif;
+    --ff-heading: 'Helvetica', 'Arial', sans-serif;
+  }
+  
+  @media (min-width: 50em) {
+    :root {
+
+    }
+  }
