@@ -15,7 +15,9 @@
 }
 
 .active {
-  background-color: var(--clr-accent-100);
+  background-color: var(--fc-primary);
+  color: var(--background);
+  font-weight: 900;
 }
 
 nav {
@@ -23,41 +25,59 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 60%;
+  width: 1200px;
   position: sticky;
   top: 0;
 }
 
+@media (max-width: 1260px) {
+  nav {
+    width: 100%;
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 60em) {
+  nav {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
 nav .title {
-  font-size: 1.75rem;
-  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
   margin:0;
-  font-weight: 300;
+  font-weight: 900;
   text-decoration: none;
-  color: #fff;
+  color: var(--fc-primary);
   // color: #fb8332;
 }
 
 nav ul {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  margin: 0 0 0 auto;
+  padding:0;
+  gap: 1rem;
 }
 
 nav ul li {
- list-style: none; 
+ list-style: none;
 }
 
 nav ul li a {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: var(--fc-primary);
+  font-weight: 900;
   padding: 0.5rem 1rem;
   margin: 0;
   border-radius: 0.25rem;
 }
 
 nav ul li a:not(.active):hover {
-  background-color:#172554 ;
+  background-color:  var(--clr-accent-100);
 }
 
 nav .menu {
@@ -74,11 +94,11 @@ nav .menu {
 nav .menu span {
   height: 0.2rem;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--fc-primary);
   border-radius: 0.2rem;
 }
 
-@media (max-width: 50em) {
+@media (max-width: 60em) {
   nav .menu {
       display: flex;
   }
@@ -103,7 +123,7 @@ nav .menu span {
 
   nav ul.open {
       display: flex;
-      background: rgba(0,0,0,0.85);
+      background: var(--background);
   }
 
   nav ul li {
@@ -115,10 +135,23 @@ nav .menu span {
   }
 
   nav ul li a {
-      margin: 0.2rem 0.5rem;
+      padding: 1rem 2rem;
   }
 
   .logo {
-    margin-left: 1.5rem;               
+    margin-left: 1rem;               
   }
+}
+
+.githubLink {
+  margin: 0;
+  padding: 0;
+
+  
+}
+
+.githubLink svg {
+  margin: 0;
+  width: 35px;
+  // background: green;
 }

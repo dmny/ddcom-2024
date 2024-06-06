@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+<meta name="ad.size" content="width=300,height=250"/>
+<title></title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+#banner {
+	position: relative;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#banner-border{
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #002664;
+  pointer-events: none;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="WSFS-22935-NEWBRANCH-300x250.js"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	canvas = document.getElementById("canvas");
+	exportRoot = new lib.WSFS22935NEWBRANCH300x250();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+stage.scaleX = stage.scaleY = window.devicePixelRatio;
+}
+</script>
+</head>
+<body onload="init();">
+<div id="banner" style="cursor:pointer;">
+	<canvas id="canvas" width="300" height="250" style="background-color:rgba(255, 255, 255, 1.00);"></canvas>
+	<div id="banner-border"></div>
+</div>
+<script type="text/javascript">
+    var clickTag = "https://www.google.com";
+	var canvas = document.getElementById("canvas");
+	var w = canvas.width;
+	var h = canvas.height;
+	canvas.width = w * window.devicePixelRatio;
+	canvas.height = h * window.devicePixelRatio;
+	canvas.style.width = w + "px";
+	canvas.style.height = h + "px";
+	var banner = document.getElementById("banner");
+	banner.style.width = w + "px";
+	banner.style.height = h + "px";
+	banner.addEventListener("click", function(){window.open(window.clickTag);});
+	var border = document.getElementById("banner-border");
+	border.style.width = (w-2) + "px";
+	border.style.height = (h-2) + "px";
+</script>
+</body>
+</html>

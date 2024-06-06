@@ -1,36 +1,76 @@
 // Components
-import SkillsChart from "../components/skillsChart"
+import React from 'react';
 import { motion as m } from "framer-motion"
+import SkillsChart from "../components/skillsChart"
+import aboutData from "../data/aboutData"
+import ReactSvg from "../components/svg/reactSvg"
 
-const SkillVariant = {
-  hidden: { x: 30, opacity: 0 },
-  show: { x:0, opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      delayChildren:1
+const container = {
+  hidden: { },
+  show: {
+  transition: {
+    staggerChildren: 0.05,
+    // delayChildren:0.1
     }
   },
-  exit: { x: 30, opacity: 0 },
-}
+  exit: { 
+    transition: {
+      staggerChildren: 0.05,
+      // delayChildren:0.5
+    }
+  },
+};
+
+const listItem = {
+  hidden: { y: -10, opacity: 0 },
+  show: {  y: 0, opacity: 1 },
+  exit: { y: 10, opacity: 0 }
+};
+
+const headerItem = {
+  hidden: { y: -28 },
+  show: { y: 0,
+    transition: {
+      duration: 0.25
+    }
+  },
+  exit: { y: -28 }
+};
+
+const aboutParagraphs = Object.values(aboutData[0]);
 
 export default function Skills() {
   return (
     <div className="container">
+      <m.div className="about" variants={ container } initial="hidden" animate="show" exit="exit">
+        <div className="header-mask">
+          <m.h2 variants={headerItem}>{ aboutData[0].header }</m.h2>
+        </div>
+        <m.h3 variants={listItem}>{ aboutData[0].subHeader }</m.h3>
+        {aboutParagraphs.slice(3).map((item,i) => (
+          <m.p variants={listItem} key={i}>{ item }</m.p>
+        ))}
 
-      <m.div className="about" initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -30, opacity: 0 }} transition={{ duration: 0.5, type: "spring" }}>
-        <m.h2>About Dave</m.h2>
-        <m.h3>I am a multi-disciplinary front-end developer with over 15 years experience across the digital landscape.</m.h3>
-        <p>Over the course of my career I have held the title of Web Designer, Digital Designer & Digital Production Designer. In each of these experiences, code was involved, but not central to the role.</p>
-        <p>As my career progressed, I found myself increasingly less excited about the design side of things, and I then decided to focus on development.</p>
+
+        {/* <div className="header-mask">
+          <m.h2 variants={headerItem}>EXCITED ABOUT</m.h2>
+        </div>
+        <div className="current-container">
+        <div className="current"><ReactSvg /></div>
+        <div className="current"></div>
+        <div className="current"></div>
+        <div className="current"></div>
+        <div className="current"></div>
+        <div className="current"></div>
+        <div className="current"></div>
+        <div className="current"></div>
+      </div> */}
       </m.div>
-
-      <m.div className="skill-charts" variants={SkillVariant} initial="hidden" animate="show" exit="exit">
+      <div className="skill-charts">
         <SkillsChart discipline={"Languages"} />
         <SkillsChart discipline={"Libraries"} />
         <SkillsChart discipline={"Production"} />
-      </m.div>
-
+      </div>
     </div>
   )
 }
-  

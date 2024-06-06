@@ -1,41 +1,57 @@
-import { Link } from "react-router-dom"
+import React from 'react';
 import { motion as m } from "framer-motion"
-import metroclub from '../assets/metroclub/metroclub.jpg';
-import nocturnal from '../assets/nocturnal/nocturnal.jpg';
-import bannerData from "../data/bannerData"
-import BannerCard from "../components/bannerCard"
+import bannerData from "../data/bannerData";
+import websiteData from "../data/websiteData";
+import BannerCard from "../components/bannerCard";
+import WebsiteCard from "../components/websiteCard";
 
 export default function Work() {
-  
-  const SkillVariant = {
-    hidden: { x: 30, opacity: 0 },
-    show: { x:0, opacity: 1,
+
+  const workVariant = {
+    hidden: { opacity: 1 },
+    show: {  opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        delay: 1,
+        staggerChildren: 5,
         delayChildren:1
       }
     },
-    exit: { x: 30, opacity: 0 }
-  }
-
-  const Banners = bannerData.map(banner => <BannerCard key={banner.id} {...banner}/>)
+    exit: { opacity: 1 }
+  };
+  
+  const headerItem = {
+    hidden: { y: -28 },
+    show: { y: 0,
+      transition: {
+        duration: 0.25
+      }
+    },
+    exit: { y: -28 }
+  };
+  
 
   return (
-    <>
       <div className="container">
-        <m.div className="websites" initial={{ x:-50, opacity: 0 }} animate={{ x:0, opacity:1 }} exit={{ x:-50, opacity: 0 }} >
-          <h2>Websites</h2>
-          <img src={metroclub} alt="" />
-        </m.div>
-        <div className="bannerContainer">
-          <m.div className="banners" variants={SkillVariant} initial="hidden" animate="show" exit="exit">
+        <div className="website-container">
+          <m.div className="banners" variants={workVariant} initial="hidden" animate="show" exit="exit">
             <div className="work-header">
-              <h2>HTML5 Display Ads</h2>
+              <div className="header-mask">
+                <m.h2 variants={headerItem} initial="hidden" animate="show" exit="exit">WEBSITES</m.h2>
+              </div>
             </div>
-            { Banners }
+            { websiteData.map(website => <WebsiteCard key={website.id} {...website}/>) }
+          </m.div>
+        </div>
+        <div className="banner-container">
+          <m.div className="banners" variants={workVariant}>
+            <div className="work-header">
+              <div className="header-mask">
+                <m.h2 variants={headerItem} initial="hidden" animate="show" exit="exit">GSAP DISPLAY ADS</m.h2>
+              </div>
+            </div>
+            { bannerData.map(banner => <BannerCard key={banner.id} {...banner}/>) }
           </m.div>
         </div>
       </div>
-    </>
   )
 }

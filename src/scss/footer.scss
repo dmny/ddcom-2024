@@ -1,0 +1,22 @@
+.footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    // background: #333;
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    height: 20vh;
+    // background: red;
+}
+
+.footer-left, 
+.footer-right {
+width: 50%;
+}
