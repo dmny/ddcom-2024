@@ -41,7 +41,7 @@ export default function Home() {
       <div className="homeCopy" aria-hidden="true">
             <div className="home">
               <div className="header-mask">
-                <m.h1 variants={ headerItem } initial="hidden" animate="show" exit="exit">DAVE DELANEY</m.h1>
+                <m.h2 variants={ headerItem } initial="hidden" animate="show" exit="exit">DAVE DELANEY</m.h2>
               </div>
             </div>
             <div className="home">

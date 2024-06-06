@@ -23,7 +23,6 @@ export default function BannerCard (props) {
         <iframe key={key} height="250" width="300" scrolling="no" src={ iframeSrc }></iframe>
         <div className="work-info">
             <h3>{props.client}</h3>
-            <p>sdfjkhskdjhfsd</p>
             <button className="btn" type="button" onClick={ loadIframe }>{ buttonText }</button>
         </div>
     </m.div>
