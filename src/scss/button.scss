@@ -1,12 +1,11 @@
 .btn {
   border: 0;
   align-items: center;
-  background-color:  #cc8556;
+  background-color:  var(--fc-primary);
   border-radius: .25rem;
-  color: #fff;
+  color: var(--background);
   padding: 1rem;
-  font-weight: 600;
-  margin: 0;
+  font-weight: 900;
   text-decoration: none;
   user-select: none;
   width: auto;
@@ -14,10 +13,11 @@
 
 .btn:hover,
 .btn:focus {
-  background-color: #fb8332;
+  background-color: var(--clr-accent-100);
+  color: var(--fc-primary);
 
 }
 
 .btn:active {
-  background-color: #c85000;
+  background-color: var(--clr-accent-100);
 }

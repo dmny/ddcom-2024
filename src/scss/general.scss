@@ -1,74 +1,78 @@
 html {
-  background-color: #051937;
-  background-image: linear-gradient(to bottom, #02040f, #070b1a, #0a1023, #09152d, #051937);
+  background-color: var(--background);
   background-repeat: no-repeat;
 }
-
-// html * {
-//   outline: 1px solid #f30;
-// }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--ff-heading);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: var(--fc-primary);
 }
 
 a {
-  color: rgb(3, 196, 154);
+  color: var(--fc-primary);
   text-decoration: none;
 }
 
 p {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   letter-spacing: .02rem;
-  font-weight: 100;
-  
+  font-weight: 400;
 }
 
-img {
-  max-width: 100%;
+svg g, svg path, svg rect {
+  fill: var(--background);
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: 200;
-  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
 }
 
 h2 {
-  font-size: 1.875rem;
-  font-weight: 300;
+  font-size: 1.4rem;
+  font-weight: 900;
   letter-spacing: 0.1rem;
 }
 
 h3 {
   margin:0;
   padding:0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  line-height: 1.6rem;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.02rem;
+  line-height: 1.75rem;
 }
 
-.container {
-  position: relative;
-  margin: 15rem auto;
-  padding: 0;
-  max-width: 60%;
+.container { 
   display: flex;
   flex-wrap: wrap;
-  /* background-color: #333; */
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 4rem 1rem 0;
+  padding: 3rem 0;
+  max-width: 100%;
 }
 
-@media(max-width: 50em) {
+@media(min-width: 60em) {
   .container {
-    padding: 0;
-    margin: 0;
-  flex-direction: column;
-  max-width: 100%;
-  // background: #333;
+    margin: 10rem 3rem;
   }
+}
+
+@media(min-width: 78em) {
+  .container {
+    margin: 10rem auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+  }
+}
+
+.header-mask {
+  overflow: hidden;
 }

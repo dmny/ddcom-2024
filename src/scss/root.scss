@@ -1,16 +1,13 @@
 :root {
-    --fc-primary: #fff;
-
-    --clr-Primary-100: #02040f; 
-    --clr-Primary-200: 	hsl(231, 15%, 18%);
-
+    --fc-primary: #0c1617;
+    // --fc-primary: hsl(183, 50%, 8%);
+    --background: hsl(176, 32%, 75%);
   
-    --clr-accent-100: rgb(50, 55, 69);
+    --clr-accent-100: rgb(124, 177, 173);
 
     --ff-primary: 'Verdana', sans-serif;
-    --ff-heading: 'Helvetica', 'Arial', sans-serif;
-  }
-  
+    --ff-heading: 'Kumbh Sans', sans-serif;
+}
   @media (min-width: 50em) {
     :root {
 

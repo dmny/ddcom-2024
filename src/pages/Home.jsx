@@ -1,41 +1,62 @@
-import { motion as m } from "framer-motion"
 import { Link } from 'react-router-dom';
+import { motion as m } from "framer-motion"
 
 export default function Home() {  
 
+  const headerItem = {
+    hidden: { y: 40 },
+    show: { y: 0,
+      transition: {
+        duration: 0.25,
+        delay: 0.25
+      }
+    },
+    exit: { y: 40 }
+  };
+
+  const centerItem = {
+    hidden: { opacity:0 },
+    show: { opacity:1,
+      transition: {
+        duration: 0.25
+      }
+    },
+    exit: { opacity:0 }
+  };
+
+  const buttonItem = {
+    hidden: { y: -50 },
+    show: { y: 0,
+      transition: {
+        duration: 0.25,
+        delay: 0.25
+      }
+    },
+    exit: { y: -50 }
+  };
+
+
   return (
-    <>
     <div className="homeContainer">
       <div className="homeCopy" aria-hidden="true">
             <div className="home">
-              <m.h2
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -50, opacity: 0 }}
-              transition={{ duration: 0.15, type: "spring", stiffness: 60, delay: 0.25 }}
-              >DAVE DELANEY</m.h2>
-            </div>
-            <div className="home">
-              <m.h1
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -50, opacity: 0 }}
-              transition={{ duration: 0.15, type: "spring", stiffness: 60, delay: 0.35 }}
-              >FRONT-END DEVELOPER</m.h1>
-            </div>
-            <div className="home">
-              <Link to="/about">
-                <m.button
-                  initial={{ y: -30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -30, opacity: 0 }}
-                  transition={{ duration: 0.05, type: "spring", stiffness: 60, delay: 0.45 }}
-                  class="btn" role="button"
-                  >Learn about Dave</m.button>
-                </Link>
+              <div className="header-mask">
+                <m.h2 variants={ headerItem } initial="hidden" animate="show" exit="exit">DAVE DELANEY</m.h2>
               </div>
-           </div>
+            </div>
+            <div className="home">
+              <m.h1 variants={ centerItem } initial="hidden" animate="show" exit="exit">FRONT-END DEVELOPER</m.h1>
+            </div>
+            <div className="home">
+            <div className="header-mask">
+              <m.div variants={ buttonItem } initial="hidden" animate="show" exit="exit">
+                <Link to="/about">
+                  <button className="btn" role="button">LEARN MORE</button>
+                </Link>
+              </m.div>
+            </div>
+          </div>
+        </div>
     </div>
-    </>
   )
 }

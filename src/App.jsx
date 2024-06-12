@@ -1,32 +1,31 @@
-import { Route, Routes, Link, useLocation } from "react-router-dom"
-import React, { useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion'
+import { Route, Routes, useLocation } from "react-router-dom"
+import { AnimatePresence, motion as m } from 'framer-motion'
 import Home from './pages/Home'
 import Navbar from './pages/Navbar'
+import Footer from './pages/Footer'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Work from './pages/Work'
-import WorkDetail from './pages/WorkDetail'
-
-// import WorkDetail from './pages/WorkDetail'
 
 function App() {
-  const location = useLocation()
-  // alert(location);
+
+  const location = useLocation();
+
   return (
+  
     <div className="App">
-      <Navbar />
+      {location.pathname !== "/" ? <Navbar/> : null}
       <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>} />
           <Route path="/work" element={<Work/>} />
-          <Route path="/work/:id" element={<WorkDetail/>} />
           <Route path="/contact" element={<Contact/>} />
         </Routes>
       </AnimatePresence>
+      {location.pathname !== "/" ? <Footer/> : null}
     </div>
   )
-}
+};
 
 export default App

@@ -1,81 +1,325 @@
-.bannerContainer {
-  margin-left: auto;
-  padding: 0;
-  width: 632px;
+
+.website-container {
+  margin: 1rem;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  // background-color: #333;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media(min-width: 50em) {
+  .website-container {
+    flex: 1;
+  }
+  .work-image {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1 / 1.25;
+  }
+}
+
+@media(min-width: 78em) {
+  .website-container {
+    margin: 0;
+    padding: 0;
+    width: 520px;
+    align-items: start;
+    // background: red;
+  }
+  .work-image {
+    aspect-ratio: 0;
+  }
+}
+
+.banner-container {
+  width: 100%;
+}
+
+@media(min-width: 60em) {
+  .banner-container {
+    width: 324px;
+    flex-wrap: wrap;
+    align-items: start;
+  }
+}
+
+@media(min-width: 78em) {
+  .banner-container {
+    width: 680px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: start;
+    // background: blue;
+  }
 }
 
 .banners {
-  margin: 0;
-  padding: 0;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
-  // background: green;
 }
 
-.bannerCard {
-  margin:0;
-  border-radius: 10px;
+@media(min-width: 60em) {
+  .banners {
+    width: 100%;
+  }
 }
 
-.bannerInfo .btn {
-  margin: 1.5rem 0;
+@media(min-width: 78em) {
+  .banners {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
-.banner {
+.work-header h2 {
   margin: 0;
-  padding: 0;
-  width: 300px;
 }
 
-.websites {
-  padding: 0;
-  flex:1 0 0;
-  margin-right: 4rem;
-  // background-color: lightblue;
+.work-card {
+  padding: 0.75rem;
+  margin:0;
+  border-radius: 5px;
+  background: var(--fc-primary);
+  color: var(--background);
+
+  > iframe {
+    border: 0;
+    overflow: hidden;
+  }
 }
 
-.websites img {
-  border: 1px solid #666;
-}
-
-.websites h2 {
-  margin: 0 0 2.5rem;
+.work-info .btn {
+  padding: 0.5rem;
+  margin: 1rem 0 0;
+  color: var(--fc-primary);
+  background: var(--background);
 }
 
 .work-header {
-    width: 100%;
-    //  background: red;
-}
-
-iframe {
   margin: 0;
-  border: 0;
+  padding: 0;
+  width: 100%;
 }
-  
-@media(max-width: 50em) {
-  .websites {
-      margin: 10rem 0 5rem!important;
-      padding: 0 1.5rem;
-      width: 100%;
-      height: auto;
+
+.work-info {
+  padding: 0.5rem;
+
+  p{
+    margin: 0.25rem 0 0.5rem;
   }
 
-  .banners {
-    width: 100%;
-    padding: 0 2rem 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .btn {
+    padding: 0.5rem;
+    color: var(--fc-primary);
+    background: var(--background);
   }
 
-  .bannerContainer {
-    width: 100%;
+  h3 {
+    margin: 0.5rem 0 0;
   }
-  
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .banner-container {
+//   position: relative;
+//   width: 680px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   // background: #f30;
+//   align-items: start;
+// }
+
+// .banners {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   gap: 2rem;
+// }
+
+// .work-card {
+//   padding: 0.75rem;
+//   margin:0;
+//   border-radius: 5px;
+//   background: var(--fc-primary);
+//   color: var(--background);
+// }
+
+// .work-card h3 {
+//   margin:0;
+//   color: var(--background);
+// }
+
+// .work-card .btn {
+//   padding: 0.5rem;
+//   // margin: 4rem;
+//   color: var(--fc-primary);
+//   background: var(--background);
+// }
+
+// @media(max-width: 1260px) {
+//   .banner-container {
+//     width: 324px;
+//   }
+
+//   .banners {
+//     width: 100%;
+//     margin: 0;
+//     padding: 0;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// }
+
+// @media(max-width: 60px) {
+//   .banner-container {
+//     width: 100%;
+//   }
+
+//   .banners {
+//     width: 100%;
+//     margin: 0;
+//     padding: 0;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
+
+//   .banner {
+//     width: 100%;
+//   }
+// }
+
+
+
+
+// .website-container {
+//   display: flex;
+//   flex:1 0 0;
+//   flex-direction: column;
+//   margin-right: 4rem;
+//   gap: 2rem;
+//   height: 100%
+// }
+
+// .website {
+//   padding: 0;
+//   display: flex;
+//   flex-wrap: wrap;
+//   background: var(--fc-primary);
+//   color: var(--background);
+//   border-radius: 5px;
+//   padding: 0.75rem;
+//   // background-color: #333;
+// }
+
+// .work-card img {
+//   width: 100%;
+
+// }
+
+// .website-container h2 {
+//   margin: 0 0 2rem;
+// }
+
+// @media(max-width: 60em) {
+//   .website-container, 
+//   .banner-container {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+
+//     align-items: center;
+//     margin: 0;
+//     padding: 0;
+//     // background: green;
+//   }
+
+//   .website {
+//       margin:0;
+//       width: 324px;
+//       // background:red;
+//   } 
+// }
+
+// @media(max-width: 1260px) {
+//   .website-container {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2rem;
+//     margin: 0;
+//     padding: 0;
+//     // background: green;
+//   }
+
+//   .website {
+//       margin:0;
+//       // background:red;
+//   } 
+// }
+
+
+// .workInfo {
+//   margin: 1rem 0 0;
+//   padding:0;
+//   // background: #f30;
+// }
+
+// .workInfo .btn {
+//   margin: .5rem 0  ;
+
+// }
+
+// .work-header h2 {
+//   margin: 0;
+
+// }
+
+// .work-header {
+//     margin: 0;
+//     padding: 0;
+//     width: 100%;
+//     height: 30px;
+//     // background: green;
+// }
+
+// iframe {
+//   margin: 0;
+//   border: 0;
+//   overflow: hidden;
+// }

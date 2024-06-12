@@ -19,6 +19,13 @@ const bannerData = [
         project: "Mortgage Services",
         pageUrl: "/wsfs_300x250/index.html",
         imgUrl: "/wsfs_300x250/wsfs_300x250.jpg",
+    },
+    {
+        id: 4,
+        client: "WSFS Bank",
+        project: "Mortgage Services",
+        pageUrl: "/wsfs_02_300x250/index.html",
+        imgUrl: "/wsfs_02_300x250/wsfs_02_300x250.jpg",
     }
 ]
 export default bannerData

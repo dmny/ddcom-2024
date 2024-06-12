@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background: var(--fc-primary);
+}
+
+.footer-left, 
+.footer-right {
+    width: 600px;
+    height: 10vh;
+    background: var(--fc-primary);
+}
