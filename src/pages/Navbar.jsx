@@ -48,29 +48,29 @@ export default function Nav() {
     <header className="header">
       <nav>
         <div className="logo">
-          <Link to="/" className="title" onClick={() => setMenuOpen(false) }>
-            <m.div variants={ logoAnimation } initial="hidden" animate="show" exit="exit">DAVE DELANEY</m.div>
+          <Link to="/" onClick={() => setMenuOpen(false) }>
+            <m.div variants={ logoAnimation } initial="hidden" animate="show" exit="exit"><h1>DAVE DELANEY</h1></m.div>
           </Link>
-        </div>
-        <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
         </div>
         <m.ul className={menuOpen ? "open" : ""} variants={ navbarAnimation } initial="hidden" animate="show" exit="exit">
           <m.li variants={ navItemAnim }>
             <NavLink className="nav-link" to="about" onClick={() => setMenuOpen(!menuOpen)}>ABOUT</NavLink>
           </m.li>
           <m.li variants={ navItemAnim }>
-            <NavLink to="work" onClick={() => setMenuOpen(!menuOpen)}>WORK</NavLink>
+            <NavLink className="nav-link" to="work" onClick={() => setMenuOpen(!menuOpen)}>WORK</NavLink>
           </m.li>
-          {/* <m.li variants={ navItemAnim }>
+           <m.li variants={ navItemAnim }>
             <NavLink to="contact" onClick={() => setMenuOpen(!menuOpen)}>CONTACT</NavLink>
-          </m.li> */}
+          </m.li> 
           <m.li variants={ navItemAnim }>
             <div className="githubLink"><Link to="https://github.com/dmny" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(!menuOpen)}><GithubSvg /></Link></div>
           </m.li>
         </m.ul>
+        <div className={menuOpen ? "hamburger open" : "hamburger"} onClick={() => setMenuOpen(!menuOpen)}>
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+        </div>
       </nav>
     </header>
   );

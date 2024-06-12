@@ -4,6 +4,9 @@ import { motion as m } from "framer-motion"
 import SkillsChart from "../components/skillsChart"
 import aboutData from "../data/aboutData"
 import ReactSvg from "../components/svg/reactSvg"
+import GitSvg from "../components/svg/gitSvg"
+import SassSvg from "../components/svg/sassSvg"
+import TsSvg from "../components/svg/typescriptSvg"
 
 const container = {
   hidden: { },
@@ -43,33 +46,34 @@ export default function Skills() {
   return (
     <div className="container">
       <m.div className="about" variants={ container } initial="hidden" animate="show" exit="exit">
+        <div className="about-text">
+          <div className="header-mask">
+            <m.h2 variants={headerItem}>{ aboutData[0].header }</m.h2>
+          </div>
+          <m.h3 variants={listItem}>{ aboutData[0].subHeader }</m.h3>
+          { aboutParagraphs.slice(3).map((item,i) => ( <m.p variants={listItem} key={i}>{ item }</m.p> )) }
+        </div>
+        
         <div className="header-mask">
-          <m.h2 variants={headerItem}>{ aboutData[0].header }</m.h2>
+            <m.h2 variants={headerItem}>CURRENT FOCUS</m.h2>
         </div>
-        <m.h3 variants={listItem}>{ aboutData[0].subHeader }</m.h3>
-        {aboutParagraphs.slice(3).map((item,i) => (
-          <m.p variants={listItem} key={i}>{ item }</m.p>
-        ))}
 
-
-        {/* <div className="header-mask">
-          <m.h2 variants={headerItem}>EXCITED ABOUT</m.h2>
+        <div className="focus">
+          <div className="current"><SassSvg /></div>
+          <div className="current"><TsSvg /></div>
+          <div className="current"></div>
+          <div className="current"><GitSvg /></div>
+          <div className="current"><ReactSvg /></div>
+          <div className="current"></div>
+          <div className="current"></div>
+          <div className="current"></div>
         </div>
-        <div className="current-container">
-        <div className="current"><ReactSvg /></div>
-        <div className="current"></div>
-        <div className="current"></div>
-        <div className="current"></div>
-        <div className="current"></div>
-        <div className="current"></div>
-        <div className="current"></div>
-        <div className="current"></div>
-      </div> */}
+
       </m.div>
       <div className="skill-charts">
-        <SkillsChart discipline={"Languages"} />
-        <SkillsChart discipline={"Libraries"} />
-        <SkillsChart discipline={"Production"} />
+        <SkillsChart discipline={ "Languages" } />
+        <SkillsChart discipline={ "Libraries" } />
+        <SkillsChart discipline={ "Production" } />
       </div>
     </div>
   )

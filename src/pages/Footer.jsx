@@ -5,8 +5,7 @@ export default function Footer() {
   
   return (
 
-    <div className="footerContainer">
-        {/* <div className="footer">
+        <div className="footer">
           <div className="footer-left">
               <div className="githubLink">
                   <Link to="contact"><GithubSvg /></Link>
@@ -25,8 +24,8 @@ export default function Footer() {
                 </li>
             </ul>
         </div>
-        </div> */}
-    </div>
+        </div>
+
 
   );
 };

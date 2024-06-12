@@ -1,13 +1,21 @@
-
-.about h2 {
-    margin: 0 0 1rem;
-}
-
+.about,
 .skill-charts {
     display: flex;
     flex-direction: column;
+    margin: 0 1rem 1rem;
+}
+
+.about h2 {
+    margin: 0 0 0.6rem;
+}
+
+.about-text {
+    margin: 0 0 3rem;
+}
+
+.skill-charts {
     width: 100%;
-    gap: 4rem;
+    gap: 3rem;
 } 
 
 @media(min-width: 58em) {
@@ -22,6 +30,7 @@
 @media(min-width: 78em) {
     .skill-charts,
     .about {
+        margin: 0;
         --column-gap: 6rem;
         gap: --column-gap;
     }
@@ -71,9 +80,9 @@
     background: var(--background);
 }
 
-.current-container {
+.focus {
     --flex-gap: 1rem;
-    padding: 2rem 0 0;
+    padding: 1rem 0 0;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
@@ -84,11 +93,19 @@
 
 .current {
     --flex-items: 4;
+    display: grid;
+    place-items: center;
     gap: var(--flex-gap);
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--fc-primary);
     border-radius: 0.25rem;
     width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * var(--flex-gap)));
     aspect-ratio: 1;
     color: var(--background);
+}
+
+@media(min-width: 58em) {
+    .current {
+        padding: 2rem;
+    }
 }
