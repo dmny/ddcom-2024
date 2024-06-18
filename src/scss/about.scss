@@ -18,7 +18,7 @@
     gap: 3rem;
 } 
 
-@media(min-width: 58em) {
+@media(min-width: 60em) {
     .skill-charts,
     .about {
         --column-gap: 3rem;
@@ -27,7 +27,7 @@
     }
 }
 
-@media(min-width: 78em) {
+@media(min-width: 60em) {
     .skill-charts,
     .about {
         margin: 0;
@@ -37,7 +37,6 @@
 }
 
 .skill-chart {
-    position: relative;
     width: 100%;
     h2 {
         margin: 0 0 1rem;
@@ -60,7 +59,6 @@
     background-image:  linear-gradient(90deg, rgba(0, 0, 0, 0.25) 2px, transparent .1em);
     background-size: 25%;
     background-position: 32% 50%;
-    // background-color: #f30;
 }
 
 .barUnit {
@@ -70,42 +68,60 @@
 
 .bar {
     height: 1.65rem;
-    background-color: var(--fc-primary);
+    background-color: var(--clr-primary);
     width: 0;
     transform-origin: center left;
 }
   
 .barCopy span {
     padding: 0.125rem 0 x;
-    background: var(--background);
+    background: var(--clr-secondary);
 }
 
 .focus {
     --flex-gap: 1rem;
     padding: 1rem 0 0;
-    margin: 0;
+    margin: 0 0 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: var(--flex-gap);
     width: 100%;
-    // background: white;
+    .header-mask {
+        width: 100%;
+    }
+    .header-mask h2 {
+        margin: 0;
+    }
 }
 
-.current {
+.current-parent {
     --flex-items: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * var(--flex-gap)));
+    color: var(--clr-primary);
+    .current-parent span {
+        font-size: 14px;
+        font-weight: 700;
+        @media(min-width: 60em) {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.current-sibling {
+    margin: 0 0 0.25rem;
+    width: 100%;
     display: grid;
     place-items: center;
-    gap: var(--flex-gap);
     padding: 1rem;
-    background-color: var(--fc-primary);
-    border-radius: 0.25rem;
-    width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * var(--flex-gap)));
+    border-radius: 0.5rem;
+    background-color: var(--clr-primary);
     aspect-ratio: 1;
-    color: var(--background);
-}
-
-@media(min-width: 58em) {
-    .current {
+    @media(min-width: 60em) {
         padding: 2rem;
     }
 }

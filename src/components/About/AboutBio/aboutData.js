@@ -1,8 +1,8 @@
 const aboutData = [
     {
         id: 1,
-        header: "ABOUT DAVE",
-        subHeader: 'I am a multi-disciplinary front-end developer with over 15 years experience across the digital landscape.',
+        header: "ABOUT ME",
+        subHeader: 'I am a front-end developer with over 15 years experience across the digital landscape.',
         p1: "Originally starting my career as a Graphic Designer & Illustrator, I was immediately introduced to development upon starting my first position at Weblinc LLC.",
         p2: "Over the course of my career, I have exclusively focused on design for digital. I have acted as a Web Designer, Flash Developer, Digital Production Designer, and E-commerce Designer.",
         p3: "As my design career progressed, I increasingly became more involved with the development side of things. As a result, I eventually decided to focus fully on Front-End Development.",

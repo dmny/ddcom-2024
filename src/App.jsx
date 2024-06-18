@@ -6,6 +6,7 @@ import Footer from './pages/Footer'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Work from './pages/Work'
+import NotFound from './pages/NotFound'
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
   
     <div className="App">
       {location.pathname !== "/" ? <Navbar/> : null}
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait" initial={true}>
         <Routes location={location} key={location.pathname}>
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>} />
           <Route path="/work" element={<Work/>} />

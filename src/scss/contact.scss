@@ -28,8 +28,8 @@ input[type=text], select, textarea {
   
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
-    background-color: var(--fc-primary);
-    color: var(--background);
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
     padding: 12px 20px;
     font-weight: 900;
     border: none;

@@ -11,11 +11,11 @@ export default function WebsiteCard (props) {
 
     return (
     <m.div className="work-card" variants={ bannerAnim } initial="hidden" animate="show" exit="exit">
-        { props.pageUrl ? <Link to={ props.pageUrl } target="_blank" rel="noopener noreferrer"><img src={ props.imgUrl }></img></Link> : <img src={ props.imgUrl }></img>}
+        { props.websiteData.pageUrl ? <Link to={ props.websiteData.pageUrl } target="_blank" rel="noopener noreferrer"><img src={ props.websiteData.imgUrl }></img></Link> : <img src={ props.websiteData.imgUrl }></img>}
         <div className="work-info">
-            <h3>{ props.client }</h3>
-            <p className="work-description">{ props.description }</p>
-            { props.pageUrl ? <Link to={ props.pageUrl } target="_blank" rel="noopener noreferrer"><button className="btn" type="button">Visit the Site</button></Link> : <p>This website is no longer active.</p>}
+            <h3>{ props.websiteData.client }</h3>
+            <p className="work-description">{ props.websiteData.description }</p>
+            { props.websiteData.pageUrl ? <Link to={ props.websiteData.pageUrl } target="_blank" rel="noopener noreferrer"><button className="btn" type="button">Visit the Site</button></Link> : <p>This website is no longer active.</p>}
         </div>
     </m.div>
 

@@ -4,15 +4,14 @@ import GithubSvg from "../components/svg/githubSvg.jsx"
 export default function Footer() {
   
   return (
-
         <div className="footer">
           <div className="footer-left">
-              <div className="githubLink">
+              {/* <div className="githubLink">
                   <Link to="contact"><GithubSvg /></Link>
-              </div>
+              </div> */}
           </div>
           <div className="footer-right">
-            <ul>
+            {/* <ul>
                 <li>
                   <NavLink to="about" onClick={() => setMenuOpen(!menuOpen)}>ABOUT</NavLink>
                 </li>
@@ -22,10 +21,8 @@ export default function Footer() {
                 <li>
                   <NavLink to="contact" onClick={() => setMenuOpen(!menuOpen)}>CONTACT</NavLink>
                 </li>
-            </ul>
+            </ul> */}
         </div>
         </div>
-
-
   );
 };

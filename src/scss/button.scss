@@ -1,9 +1,9 @@
 .btn {
   border: 0;
   align-items: center;
-  background-color:  var(--fc-primary);
+  background-color:  var(--clr-primary);
   border-radius: .25rem;
-  color: var(--background);
+  color: var(--clr-secondary);
   padding: 1rem;
   font-weight: 900;
   text-decoration: none;
@@ -13,11 +13,11 @@
 
 .btn:hover,
 .btn:focus {
-  background-color: var(--clr-accent-100);
-  color: var(--fc-primary);
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
 
 }
 
 .btn:active {
-  background-color: var(--clr-accent-100);
+  background-color: var(--clr-accent);
 }
